@@ -5,8 +5,11 @@ module.exports = function ftpValidateResponse(string, callback) {
 
 	if (!string || typeof string !== 'string' || string.length <= 0) {
 		isStringValid = false
+	} else if (string.length - string.lastIndexOf('\r\n') !== 2) {
+		// the very end of the string must be the "end of sequence" characters
+		isStringValid = false
 	} else {
-		var lines = string.split(endOfLineSequence)
+		var lines = string.slice(0, -2).split(endOfLineSequence)
 
 		// although not explicitly stated in RFC-959, inserting new line
 		// or carriage return characters is poor practice, and should

@@ -3,10 +3,10 @@ var validator = require('../')
 
 var validResponseStrings = [
 	[ // #1
-		'220-word\r\n more words\r\n220 final',
+		'220-word\r\n more words\r\n220 final\r\n',
 		'multi-line strings are separated by carriage return and newline'
 	],[ // #2
-		'220 single line',
+		'220 single line\r\n',
 		'single line responses start with a set of numbers and a space'
 	],[ // #3
 		/*
@@ -24,7 +24,7 @@ var validResponseStrings = [
 		Therefore, a properly implemented server *may* respond with a
 		message like the following:
 		*/
-		'220 ',
+		'220 \r\n',
 		'a string containing only the status code followed by a space is valid'
 	]
 ]
@@ -53,22 +53,22 @@ var invalidResponseStrings = [
 		[],
 		'neither is this one'
 	],[
-		'220',
+		'220\r\n',
 		'a status code must be followed by a space, see valid string #3 for explanation'
 	],[
-		'220-word\r\n more\nwords\r\n220 final',
+		'220-word\r\n more\nwords\r\n220 final\r\n',
 		'a newline character by itself is not allowed'
 	],[
-		'220-word\r\n more\rwords\r\n220 final',
+		'220-word\r\n more\rwords\r\n220 final\r\n',
 		'a carriage return character by itself is not allowed'
 	],[
-		'220 first\r\n second\r\n 220 third',
+		'220 first\r\n second\r\n 220 third\r\n',
 		'first line of a multi-line must contain a hypen *immediately* after the number'
 	],[
-		'220 -first\r\n second\r\n 220 third',
+		'220 -first\r\n second\r\n 220 third\r\n',
 		'first line of a multi-line must contain a hypen *immediately* after the number'
 	],[
-		'220-single line',
+		'220-single line\r\n',
 		'single lines must not have a hyphen'
 	]
 ]
