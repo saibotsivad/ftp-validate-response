@@ -1,0 +1,25 @@
+{
+  "name": "ftp-validate-response",
+  "version": "0.0.1",
+  "description": "Given some FTP server response string, check if it conforms to the RFC specs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sdmp/ftp-validate-response.git"
+  },
+  "keywords": [
+    "ftp",
+    "sdmp"
+  ],
+  "author": "saibotsivad",
+  "license": "VOL",
+  "bugs": {
+    "url": "https://github.com/sdmp/ftp-validate-response/issues"
+  },
+  "devDependencies": {
+    "tape": "~3.0.3"
+  }
+}
