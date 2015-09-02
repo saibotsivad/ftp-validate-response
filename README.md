@@ -2,17 +2,10 @@
 
 Given some FTP server response string, check if it conforms to the RFC specs.
 
-You can use it as a synchronous function, like this:
-
-	var validator = require('ftp-validate-response')
-	assertTrue(validator('220 Everything is fine'))
-
-Or as an async function, like this:
-
-	var validator = require('ftp-validate-response')
-	validator('220 Everything is fine', function(valid) {
-		assertTrue(valid)
-	})
+```js
+var validator = require('ftp-validate-response')
+assertTrue(validator('220 Everything is fine'))
+```
 
 ## License
 
