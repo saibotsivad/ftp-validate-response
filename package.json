@@ -19,6 +19,6 @@
     "url": "https://github.com/saibotsivad/ftp-validate-response/issues"
   },
   "devDependencies": {
-    "tape": "~3.0.3"
+    "tape": "~4.7.0"
   }
 }
