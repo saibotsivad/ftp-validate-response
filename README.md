@@ -1,5 +1,7 @@
 # ftp-validate-response
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/saibotsivad/ftp-validate-response.svg)](https://greenkeeper.io/)
+
 Given some FTP server response string, check if it conforms to the RFC specs.
 
 ```js
